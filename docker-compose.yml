@@ -1,0 +1,40 @@
+version: '3'
+services:
+  lb:
+    image: dockercloud/haproxy
+    links:
+      - gateway
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 80:80
+      - 443:443
+    restart: on-failure
+
+  gateway:
+    build: .
+    image: dashersw/microservices-workshop
+    restart: on-failure
+    command: node client-gateway
+    environment:
+      - VIRTUAL_HOST=gateway.app.com
+    ports:
+      - 3000:3000
+
+  delivery-service:
+    build: .
+    image: dashersw/microservices-workshop
+    restart: on-failure
+    command: node delivery-service
+
+  order-service:
+    build: .
+    image: dashersw/microservices-workshop
+    restart: on-failure
+    command: node order-service
+
+  restaurants-service:
+    build: .
+    image: dashersw/microservices-workshop
+    restart: on-failure
+    command: node restaurants-service

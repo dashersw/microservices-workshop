@@ -1,0 +1,24 @@
+{
+    "apps": [
+        {
+            "name"      : "client-gateway",
+            "script"    : "client-gateway/index.js",
+            "watch"     : "client-gateway/index.js"
+        },
+        {
+            "name"      : "restaurants-service",
+            "script"    : "restaurants-service/index.js",
+            "watch"     : "restaurants-service/index.js"
+        },
+        {
+            "name"      : "order-service",
+            "script"    : "order-service/index.js",
+            "watch"     : "order-service/index.js"
+        },
+        {
+            "name"      : "delivery-service",
+            "script"    : "delivery-service/index.js",
+            "watch"     : "delivery-service/index.js"
+        }
+    ]
+}
