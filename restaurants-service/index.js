@@ -25,7 +25,7 @@ const restaurants = [{
     }, {
         id: 1,
         name: 'Hot dog',
-        price: 8
+        price: 10
     }]
 }]
 
