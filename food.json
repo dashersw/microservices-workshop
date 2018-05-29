@@ -1,9 +1,9 @@
 {
     "apps": [
         {
-            "name"      : "client-gateway",
-            "script"    : "client-gateway/index.js",
-            "watch"     : "client-gateway/index.js"
+            "name"      : "api-gateway",
+            "script"    : "api-gateway/index.js",
+            "watch"     : "api-gateway/index.js"
         },
         {
             "name"      : "restaurants-service",

@@ -3,7 +3,7 @@ services:
   lb:
     image: dockercloud/haproxy
     links:
-      - gateway
+      - api-gateway
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
@@ -11,15 +11,15 @@ services:
       - 443:443
     restart: on-failure
 
-  gateway:
+  api-gateway:
     build: .
-    image: microservices-workshop/gateway:production
+    image: microservices-workshop/api-gateway:production
     restart: on-failure
     environment:
-      - VIRTUAL_HOST=gateway.app.com
+      - VIRTUAL_HOST=api-gateway.app.com
     ports:
       - 3000:3000
-    command: node client-gateway
+    command: node api-gateway
 
   delivery-service:
     build: .
