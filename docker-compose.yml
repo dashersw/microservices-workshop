@@ -12,29 +12,41 @@ services:
     restart: on-failure
 
   gateway:
-    build: .
-    image: dashersw/microservices-workshop
+    build:
+      context: .
+      dockerfile: development.Dockerfile
+    image: microservices-workshop/gateway
     restart: on-failure
-    command: node client-gateway
     environment:
       - VIRTUAL_HOST=gateway.app.com
     ports:
       - 3000:3000
+    volumes:
+      - ./client-gateway:/app/src
 
   delivery-service:
-    build: .
-    image: dashersw/microservices-workshop
+    build:
+      context: .
+      dockerfile: development.Dockerfile
+    image: microservices-workshop/delivery-service
     restart: on-failure
-    command: node delivery-service
+    volumes:
+      - ./delivery-service:/app/src
 
   order-service:
-    build: .
-    image: dashersw/microservices-workshop
+    build:
+      context: .
+      dockerfile: development.Dockerfile
+    image: microservices-workshop/order-service
     restart: on-failure
-    command: node order-service
+    volumes:
+      - ./order-service:/app/src
 
   restaurants-service:
-    build: .
-    image: dashersw/microservices-workshop
+    build:
+      context: .
+      dockerfile: development.Dockerfile
+    image: microservices-workshop/restaurants-service
     restart: on-failure
-    command: node restaurants-service
+    volumes:
+      - ./restaurants-service:/app/src

@@ -1,7 +1,7 @@
 FROM node:alpine
 
 WORKDIR /src
-ADD package.json .
+ADD package.json package-lock.json ./
 RUN npm install
 
 ADD . .
