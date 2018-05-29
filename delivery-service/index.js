@@ -1,6 +1,6 @@
 const cote = require('cote')
 
-const deliveryResponder = new cote.Responder({name: 'delivery responder', key: 'deliveries'})
+const deliveryResponder = new cote.Responder({ name: 'delivery responder', key: 'deliveries' })
 deliveryResponder.on('*', req => req.type && console.log(req))
 
 const deliveries = []

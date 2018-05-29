@@ -1,6 +1,6 @@
 const cote = require('cote')
 
-const restaurantsResponder = new cote.Responder({name: 'restaurants responder', key: 'restaurants'})
+const restaurantsResponder = new cote.Responder({ name: 'restaurants responder', key: 'restaurants' })
 restaurantsResponder.on('*', req => req.type && console.log(req))
 
 const restaurants = [{

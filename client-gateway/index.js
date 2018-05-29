@@ -7,22 +7,22 @@ const app = express()
 
 app.use(bodyParser.json())
 
-const restaurantsRequester = new cote.Requester({name: 'restaurants requester', key: 'restaurants'})
+const restaurantsRequester = new cote.Requester({ name: 'restaurants requester', key: 'restaurants' })
 
-const orderRequester = new cote.Requester({name: 'order requester', key: 'orders'})
+const orderRequester = new cote.Requester({ name: 'order requester', key: 'orders' })
 
-const deliveryRequester = new cote.Requester({name: 'delivery requester', key: 'deliveries'})
+const deliveryRequester = new cote.Requester({ name: 'delivery requester', key: 'deliveries' })
 
 app.get('/restaurants', async (req, res) => {
-    const restaurants = await restaurantsRequester.send({type: 'list'})
+    const restaurants = await restaurantsRequester.send({ type: 'list' })
     res.send(restaurants);
 })
 
 app.post('/order', async (req, res) => {
-    const order = await orderRequester.send({type: 'create order', order: req.order})
-    const delivery = await deliveryRequester.send({type: 'create delivery', order})
+    const order = await orderRequester.send({ type: 'create order', order: req.order })
+    const delivery = await deliveryRequester.send({ type: 'create delivery', order })
 
-    res.send({order, delivery})
+    res.send({ order, delivery })
 })
 
 app.listen(3000, () => console.log('listening'))
