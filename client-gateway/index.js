@@ -19,7 +19,7 @@ app.get('/restaurants', async (req, res) => {
 })
 
 app.post('/order', async (req, res) => {
-    const order = await orderRequester.send({ type: 'create order', order: req.order })
+    const order = await orderRequester.send({ type: 'create order', order: req.body })
     const delivery = await deliveryRequester.send({ type: 'create delivery', order })
 
     res.send({ order, delivery })
