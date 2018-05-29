@@ -15,7 +15,7 @@ services:
     build:
       context: .
       dockerfile: development.Dockerfile
-    image: microservices-workshop/gateway
+    image: microservices-workshop/gateway:dev
     restart: on-failure
     environment:
       - VIRTUAL_HOST=gateway.app.com
@@ -28,7 +28,7 @@ services:
     build:
       context: .
       dockerfile: development.Dockerfile
-    image: microservices-workshop/delivery-service
+    image: microservices-workshop/delivery-service:dev
     restart: on-failure
     volumes:
       - ./delivery-service:/app/src
@@ -37,7 +37,7 @@ services:
     build:
       context: .
       dockerfile: development.Dockerfile
-    image: microservices-workshop/order-service
+    image: microservices-workshop/order-service:dev
     restart: on-failure
     volumes:
       - ./order-service:/app/src
@@ -46,7 +46,7 @@ services:
     build:
       context: .
       dockerfile: development.Dockerfile
-    image: microservices-workshop/restaurants-service
+    image: microservices-workshop/restaurants-service:dev
     restart: on-failure
     volumes:
       - ./restaurants-service:/app/src
