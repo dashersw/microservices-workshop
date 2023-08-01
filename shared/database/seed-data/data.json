@@ -1,0 +1,79 @@
+{
+    "restaurants": [
+        {
+            "id": 1,
+            "name": "Italian Restaurant",
+            "menu": [
+                {
+                    "id": 1,
+                    "name": "Veggie Pizza",
+                    "price": 540
+                },
+                {
+                    "id": 2,
+                    "name": "Pasta",
+                    "price": 190
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "American Restaurant",
+            "menu": [
+                {
+                    "id": 3,
+                    "name": "Burger",
+                    "price": 130
+                },
+                {
+                    "id": 4,
+                    "name": "Hot dog",
+                    "price": 150
+                }
+            ]
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "John Wick",
+            "username": "jwick",
+            "password": "Pasta@2023",
+            "role": "customer"
+        },
+        {
+            "id": 2,
+            "name": "Henry Strong",
+            "username": "hstrong",
+            "password": "111Summerd@ys",
+            "role": "customer"
+        }
+    ],
+    "orders" : [
+        {
+            "id": 1,
+            "orderId": "OD01",
+            "restaurantId": 1,
+            "customerId": 1,
+            "items": [
+                {
+                    "menuItemId": 1,
+                    "quantity": 1
+                },
+                {
+                    "menuItemId":2,
+                    "quantity": 2
+                }
+            ],
+            "total": 200
+        }
+    ],
+    "deliveries" : [
+        {
+            "id": 1,
+            "orderId": "OD01",
+            "eta": 40,
+            "status": "pending"
+        }
+    ]
+}

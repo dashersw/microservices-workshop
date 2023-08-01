@@ -13,12 +13,34 @@
     "url": "https://github.com/dashersw/microservices-workshop/issues"
   },
   "homepage": "https://github.com/dashersw/microservices-workshop#readme",
+  "scripts": {
+    "build": "npx tsc",
+    "start-all-dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/delivery-service/index.js\" \"nodemon -q dist/restaurants-service/index.js\" \"nodemon -q dist/order-service/index.js\" \"nodemon -q dist/api-gateway/index.js\""
+  },
+  "nodemonConfig": {
+    "watch": []
+  },
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "cote": "^0.16.2",
-    "express": "^4.16.3"
+    "cote": "^1.0.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.1",
+    "pg": "^8.11.1",
+    "sequelize": "^6.32.1",
+    "sqlite3": "^5.1.6"
   },
   "devDependencies": {
-    "axios": "^0.18.0"
+    "@types/axios": "^0.14.0",
+    "@types/cote": "^0.19.2",
+    "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/node": "^20.4.5",
+    "@types/pg": "^8.10.2",
+    "@types/sequelize": "^4.28.15",
+    "axios": "^1.4.0",
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1",
+    "typescript": "^5.1.6"
   }
 }
