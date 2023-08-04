@@ -1,14 +1,16 @@
-const cote = require('cote')
+const cote = require("cote");
 
-const orderResponder = new cote.Responder({ name: 'order responder', key: 'orders' })
-orderResponder.on('*', req => req.type && console.log(req))
+const orderResponder = new cote.Responder({ name: "order responder", key: "orders" });
+orderResponder.on("*", (req) => req.type && console.log(req));
 
-const orders = []
-let idCounter = 0
+const orders = [];
+let idCounter = 0;
 
-orderResponder.on('create order', req => {
-    const order = { id: idCounter++, ...req.order, status: 'preparing' }
+orderResponder.on("create order", (req) => {
+  const order = { id: idCounter++, ...req.order, status: "preparing" };
 
-    orders.push(order)
-    return Promise.resolve(order)
-})
+  orders.push(order);
+  return Promise.resolve(order);
+});
+
+orderResponder.on("list", (req) => Promise.resolve(orders));
