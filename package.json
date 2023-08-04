@@ -9,9 +9,7 @@
   },
   "author": "Armagan Amcalar <armagan@amcalar.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dashersw/microservices-workshop/issues"
-  },
+  "bugs": {    "url": "https://github.com/dashersw/microservices-workshop/issues"  },
   "homepage": "https://github.com/dashersw/microservices-workshop#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
